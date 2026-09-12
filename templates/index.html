@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Resume Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for(
+              'static',
+              filename='css/style.css'
+          ) }}">
+
+</head>
+
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            ResumeAI
+        </div>
+
+        <nav>
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="badge">
+                    AI-POWERED RESUME ANALYSIS
+                </p>
+
+                <h1>
+                    Make Your Resume
+                    <span>Job-Ready.</span>
+                </h1>
+
+                <p class="hero-description">
+
+                    Upload your resume and compare it
+                    with any job description to discover
+                    your match score, missing skills and
+                    improvement opportunities.
+
+                </p>
+
+            </div>
+
+
+            <div class="analyzer-card">
+
+                <form
+                    action="/analyze"
+                    method="POST"
+                    enctype="multipart/form-data"
+                >
+
+                    <div class="upload-area">
+
+                        <div class="upload-icon">
+                            📄
+                        </div>
+
+                        <h3>
+                            Upload Your Resume
+                        </h3>
+
+                        <p>
+                            PDF files only • Maximum 5 MB
+                        </p>
+
+                        <input
+                            type="file"
+                            name="resume"
+                            accept=".pdf"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Job Description
+                        </label>
+
+                        <textarea
+                            name="job_description"
+                            placeholder="Paste the job description here..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="analyze-button"
+                    >
+
+                        Analyze My Resume →
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <section id="features"
+                 class="features">
+
+            <h2>
+                Everything You Need
+            </h2>
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <h3>
+                        🎯 Match Score
+                    </h3>
+
+                    <p>
+                        See how closely your resume
+                        matches the job.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <h3>
+                        🔍 Skill Analysis
+                    </h3>
+
+                    <p>
+                        Discover matching and missing
+                        skills.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <h3>
+                        🤖 AI Suggestions
+                    </h3>
+
+                    <p>
+                        Get personalized recommendations
+                        to improve your resume.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 ResumeAI · Built with Python,
+            Flask and AI
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

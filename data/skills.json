@@ -1,0 +1,90 @@
+{
+    "programming": [
+        "python",
+        "java",
+        "c",
+        "c++",
+        "c#",
+        "javascript",
+        "typescript",
+        "php",
+        "ruby",
+        "go",
+        "rust"
+    ],
+
+    "ai_ml": [
+        "artificial intelligence",
+        "machine learning",
+        "deep learning",
+        "natural language processing",
+        "computer vision",
+        "tensorflow",
+        "pytorch",
+        "scikit-learn",
+        "keras",
+        "opencv",
+        "hugging face",
+        "transformers"
+    ],
+
+    "data_science": [
+        "pandas",
+        "numpy",
+        "matplotlib",
+        "seaborn",
+        "plotly",
+        "scipy",
+        "statistics",
+        "data analysis",
+        "data visualization"
+    ],
+
+    "database": [
+        "sql",
+        "mysql",
+        "postgresql",
+        "mongodb",
+        "sqlite",
+        "oracle",
+        "redis"
+    ],
+
+    "web_development": [
+        "html",
+        "css",
+        "javascript",
+        "react",
+        "angular",
+        "vue",
+        "node.js",
+        "express",
+        "flask",
+        "django",
+        "rest api"
+    ],
+
+    "cloud": [
+        "aws",
+        "azure",
+        "google cloud",
+        "docker",
+        "kubernetes"
+    ],
+
+    "tools": [
+        "git",
+        "github",
+        "linux",
+        "vs code",
+        "postman"
+    ],
+
+    "soft_skills": [
+        "communication",
+        "leadership",
+        "teamwork",
+        "problem solving",
+        "time management"
+    ]
+}

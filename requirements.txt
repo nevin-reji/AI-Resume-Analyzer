@@ -1,0 +1,7 @@
+Flask
+PyMuPDF
+spacy
+scikit-learn
+pandas
+numpy
+python-dotenv

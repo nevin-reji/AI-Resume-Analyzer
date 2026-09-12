@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0">
+
+    <title>
+        Resume Analysis
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for(
+              'static',
+              filename='css/style.css'
+          ) }}">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">
+        ResumeAI
+    </div>
+
+    <a href="/">
+        Analyze Another Resume
+    </a>
+
+</header>
+
+
+<main class="results-page">
+
+
+    <div class="results-header">
+
+        <p class="badge">
+            ANALYSIS COMPLETE
+        </p>
+
+        <h1>
+            Your Resume Analysis
+        </h1>
+
+        <p>
+            Here's how well your resume
+            matches the job description.
+        </p>
+
+    </div>
+
+
+    <!-- ===================== -->
+    <!-- FINAL SCORE -->
+    <!-- ===================== -->
+
+    <div class="score-card">
+
+        <p>
+            OVERALL MATCH
+        </p>
+
+        <div class="score">
+
+            {{ final_score }}%
+
+        </div>
+
+        <p>
+            Resume compatibility score
+        </p>
+
+    </div>
+
+
+    <!-- ===================== -->
+    <!-- SCORE CARDS -->
+    <!-- ===================== -->
+
+    <div class="score-grid">
+
+
+        <div class="small-score-card">
+
+            <h3>
+                Skill Match
+            </h3>
+
+            <strong>
+                {{ skill_score }}%
+            </strong>
+
+        </div>
+
+
+        <div class="small-score-card">
+
+            <h3>
+                NLP Similarity
+            </h3>
+
+            <strong>
+                {{ similarity }}%
+            </strong>
+
+        </div>
+
+
+        <div class="small-score-card">
+
+            <h3>
+                Skills Found
+            </h3>
+
+            <strong>
+                {{ resume_skills|length }}
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ===================== -->
+    <!-- MATCHING SKILLS -->
+    <!-- ===================== -->
+
+    <div class="result-card">
+
+        <h2>
+            ✓ Matching Skills
+        </h2>
+
+        <div class="skills-container">
+
+            {% if matched_skills %}
+
+                {% for skill in matched_skills %}
+
+                    <span class="skill matched">
+                        {{ skill }}
+                    </span>
+
+                {% endfor %}
+
+            {% else %}
+
+                <p>
+                    No matching skills found.
+                </p>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <!-- ===================== -->
+    <!-- MISSING SKILLS -->
+    <!-- ===================== -->
+
+    <div class="result-card">
+
+        <h2>
+            ✗ Missing Skills
+        </h2>
+
+        <div class="skills-container">
+
+            {% if missing_skills %}
+
+                {% for skill in missing_skills %}
+
+                    <span class="skill missing">
+                        {{ skill }}
+                    </span>
+
+                {% endfor %}
+
+            {% else %}
+
+                <p>
+                    No major missing skills detected.
+                </p>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <!-- ===================== -->
+    <!-- ALL RESUME SKILLS -->
+    <!-- ===================== -->
+
+    <div class="result-card">
+
+        <h2>
+            Skills Detected in Resume
+        </h2>
+
+        <div class="skills-container">
+
+            {% for skill in resume_skills %}
+
+                <span class="skill">
+                    {{ skill }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+    <a href="/"
+       class="back-button">
+
+        ← Analyze Another Resume
+
+    </a>
+
+
+</main>
+
+
+</body>
+
+</html>
