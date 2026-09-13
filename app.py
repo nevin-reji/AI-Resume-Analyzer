@@ -64,6 +64,39 @@ def home():
         "index.html"
     )
 
+# ==============================
+# ROBOTS.TXT
+# ==============================
+
+@app.route("/robots.txt")
+def robots():
+
+    return """User-agent: *
+Allow: /
+
+Sitemap: https://ai-resume-analyzer-avup.onrender.com/sitemap.xml
+""", 200, {
+        "Content-Type": "text/plain"
+    }
+
+# ==============================
+# SITEMAP.XML
+# ==============================
+
+@app.route("/sitemap.xml")
+def sitemap():
+
+    return """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://ai-resume-analyzer-avup.onrender.com/</loc>
+    </url>
+
+</urlset>
+""", 200, {
+        "Content-Type": "application/xml"
+    }
 
 # ==============================
 # ANALYZE RESUME
